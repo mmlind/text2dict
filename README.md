@@ -42,26 +42,24 @@ These are some of the Wikipedia language corpora that I tested `text2dict` on:
 
 ## How does it work?
 
-For a detailed introduction and full code review please refer to my blog post: [How to use multiple cores to process very large text files](http://mmlmind.github.io/posts/how_to_use_multiprocessing_to_convert_text_to_a_dictionary/).
+For a detailed introduction and full code review please refer to my blog post: [How to use multiple cores to process very large text files](http://mmlmind.github.io/posts/reading_wikipedia_in_seconds_or_how_to_use_multiple_cores_to_process_large_text_files/).
 
 
 ## Install
+
+```
+$ make
+```
 
 Before you build and run the code you need to choose what method of parallel processing you want to use by editing the `text2dict()` function in `text2dict.c`.
 If you don't change anything it will use the `text2dict_mutexes()`  by default.
 
 Beware that when using `text2dict_semaphores()` or `text2dict_pipes()` program execution will be ***significantly slower***. I don't recommend using either of the 2 methods for very large files. Refer to above blog post for details.  
 
-```
-
-$ make
-
-```
-
 ## Usage
 
 ```
-$ bin/text2dict -p2 -m10 -i corpus/enwiki20201002.txt -o dict/dict_en_20201002.txt
+$ text2dict -p2 -m10 -i enwiki20201002.txt -o dict_en_20201002.txt
 
 @param     -i      INPUT  = file name and path of the text corpus that is to be read [REQUIRED]
 @param     -o      OUTPUT = file name and path of the dictionary that is to be created [REQUIRED]

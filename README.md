@@ -42,7 +42,7 @@ These are some of the Wikipedia language corpora that I tested `text2dict` on:
 
 ## How does it work?
 
-For a detailed introduction and full code review please refer to my blog post: [How to use multiple cores to process very large text files](http://mmlmind.github.io/posts/reading_wikipedia_in_seconds_or_how_to_use_multiple_cores_to_process_large_text_files/).
+For a detailed introduction and full code review please refer to my blog post: [How to use multiple cores to process very large text files](https://mmlind.github.io/posts/reading_wikipedia_in_seconds_or_how_to_use_multiple_cores_to_process_large_text_files/).
 
 
 ## Install
@@ -59,7 +59,7 @@ Beware that when using `text2dict_semaphores()` or `text2dict_pipes()` program e
 ## Usage
 
 ```
-$ text2dict -p2 -m10 -i enwiki20201002.txt -o dict_en_20201002.txt
+$ text2dict -p2 -m10 -i enwiki.txt -o dict.txt
 
 @param     -i      INPUT  = file name and path of the text corpus that is to be read [REQUIRED]
 @param     -o      OUTPUT = file name and path of the dictionary that is to be created [REQUIRED]
